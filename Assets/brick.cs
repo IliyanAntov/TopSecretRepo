@@ -6,6 +6,10 @@ public class brick : MonoBehaviour {
     public GameObject item;
     private bool spawned = false;
 
+    public void Start() {
+        Instantiate(GameObject.FindGameObjectWithTag("Brick Hitbox"), transform.position, Quaternion.identity);
+    }
+
     public void spawn() {
         if (item != null && !spawned) {
             float height = item.GetComponent<Renderer>().bounds.size.y;
